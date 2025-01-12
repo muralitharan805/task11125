@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="app-card" *ngFor="let dogImage of dogImages$ | async">
+    <mat-card class="set-card-size hover-card">
+      <img
+        class="set-card-size"
+        mat-card-image
+        [ngSrc]="dogImage.message"
+        [alt]="dogImage.message"
+        fill
+      />
+    </mat-card>
+  </div>
+</div>

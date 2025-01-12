@@ -1,0 +1,42 @@
+<div class="form-box">
+  <h1>Account & User Details</h1>
+  <form
+    class="form-content"
+    [formGroup]="accountUserForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName" />
+      <mat-error *ngIf="accountUserForm.get('firstName')?.hasError('required')">
+        First Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName" />
+      <mat-error *ngIf="accountUserForm.get('lastName')?.hasError('required')">
+        Last Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" />
+      <mat-error *ngIf="accountUserForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="accountUserForm.get('email')?.hasError('email')">
+        Email is invalid
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Phone" formControlName="phone" />
+      <mat-error *ngIf="accountUserForm.get('phone')?.hasError('required')">
+        Phone is required
+      </mat-error>
+      <mat-error *ngIf="accountUserForm.get('phone')?.hasError('invalidPhone')">
+        Invalid phone number
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <br />
+    <button mat-raised-button color="tertiary" type="reset">Reset</button>
+  </form>
+</div>
