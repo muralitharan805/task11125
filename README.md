@@ -2,13 +2,7 @@
 
 Use below command to install project dependencies
 
-```bash
-npm install
-```
-
-```bash
-npm ci
-```
+npm install or npm ci
 
 ## Run Project server
 
